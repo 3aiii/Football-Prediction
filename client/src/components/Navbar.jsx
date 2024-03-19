@@ -7,21 +7,21 @@ import { BsNewspaper } from "react-icons/bs";
 
 function Navbar() {
   return (
-    <div className='w-full border-solid border-gray-800 border-b-2 h-16 flex justify-between'>
+    <div className='w-full border-solid border-gray border-b-2 h-16 flex justify-between'>
         <div className="text-center flex items-center">
-            <RxHamburgerMenu className='text-gray-50 mx-7'/>
+            <RxHamburgerMenu className='text-s-light-gray mx-7'/>
             <Logo></Logo>
         </div>
-        <div className='flex'>
-            <div className='text-gray-400 flex items-center mx-5 hover:cursor-pointer'>
+        <div className='flex text-light-gray'>
+            <div className='flex items-center mx-5 hover:cursor-pointer'>
                 <IoFootball className='mr-2'/>
                 <p>Scores</p>
             </div>
-            <div className='text-gray-400 flex items-center mx-5 hover:cursor-pointer'>
+            <div className='flex items-center mx-5 hover:cursor-pointer'>
                 <GoStar className='mr-2'/>
                 <p>Favourites</p>
             </div>
-            <div className='text-gray-400 flex items-center mx-5 hover:cursor-pointer'>
+            <div className='flex items-center mx-5 hover:cursor-pointer'>
                 <BsNewspaper className='mr-2'/>
                 <p>News</p>
             </div>
