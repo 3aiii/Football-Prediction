@@ -1,10 +1,13 @@
 import React from 'react'
 import Matchs from '../utils/Matchs.json'
+import Navbar from '../components/Navbar'
+import Region from '../components/Region'
 
 const Main = () => {
   return (
     <div className='text-bold text-xl'>
-      <p>Test</p>
+      <Navbar></Navbar>
+      <Region></Region>
        {/* <ul className='bg-black text-white'>
         {
           Matchs.map(team => (
