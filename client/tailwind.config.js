@@ -5,12 +5,19 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    // colors: {
-    //   transparent: 'transparent',
-    //   current: 'currentColor',
-    //   'white': '#ffffff',
-    //   'gray' : '#AAAAAA'
-    // },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'white': '#ffffff',
+      'black' : '#111111',
+      's-light-gray' : '#f9fafb',
+      'light-gray' : '#9ca3af',
+      'gray' : '#1f2937',
+      'light-black' : '#151515',
+      'light-or' : '#F8A145',
+      'medium-or' : '#F07900',
+      'hard-or' : '#D35100'
+    },
     extend: {},
   },
   plugins: [],

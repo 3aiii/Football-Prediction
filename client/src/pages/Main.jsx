@@ -1,37 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import Matchs from '../utils/Matchs.json'
+import axios from 'axios'
+import Navbar from '../components/Navbar';
+import Region from '../components/Region';
 
 const Main = () => {
   const [data, setData] = useState([]);
   const [HomeTeam, setHomeTeam] = useState('');
   const [AwayTeam, setAwayTeam] = useState('');
   const [Day, setDay] = useState();
-
-  const handleSend = async() =>{
-    const resp = await axios.post('http://127.0.0.1:5000/api/form', {
-      HomeTeam,
-      AwayTeam,
-      Day
-    })
+  // const handleSend = async() =>{
+  //   const resp = await axios.post('http://127.0.0.1:5000/api/form', {
+  //     HomeTeam,
+  //     AwayTeam,
+  //     Day
+  //   })
     
-    console.log(resp.data);
-  }
+  //   console.log(resp.data);
+  // }
 
-  const fetch = async () =>{
-    const {data}  = await axios.get('http://127.0.0.1:5000/api/user')
-    setData(data.user)
-  }
+  // const fetch = async () =>{
+  //   const {data}  = await axios.get('http://127.0.0.1:5000/api/user')
+  //   setData(data.user)
+  // }
 
-  useEffect(() => {
-    fetch()
-  }, []);
+  // useEffect(() => {
+  //   fetch()
+  // }, []);
 
   return (
-    <div className='text-bold text-xl'>
-      <p>Test</p>
+    <div className='flex flex-col justify-center items-center'>
+      <Navbar />
+      <div className='w-[1080px]'>
+        <Region />
+      </div>
        {/* <ul className='bg-black text-white'>
         {
-          Matchs.map(team => (
+          Matchs.map((team,index) => (
             <li key={team.MatchNumber} className=''>
               <div className='flex items-center gap-2'>
                 <img
@@ -49,8 +54,8 @@ const Main = () => {
             </li>
           ))
         }
-      </ul> 
-      */}
+      </ul>  */}
+     
     </div>
   )
 }

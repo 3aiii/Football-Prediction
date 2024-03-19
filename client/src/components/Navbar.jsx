@@ -1,29 +1,26 @@
 import React from 'react'
-import Logo from '../assets/main_logo/Logo';
 import { RxHamburgerMenu } from "react-icons/rx";
-import { IoFootball } from "react-icons/io5";
-import { GoStar } from "react-icons/go";
-import { BsNewspaper } from "react-icons/bs";
+import { Link } from 'react-router-dom'
+import { PiSoccerBall  } from "react-icons/pi";
+import Menu from './Menu';
 
 function Navbar() {
   return (
-    <div className='w-full border-solid border-gray-800 border-b-2 h-16 flex justify-between'>
-        <div className="text-center flex items-center">
-            <RxHamburgerMenu className='text-gray-50 mx-7'/>
-            <Logo></Logo>
-        </div>
-        <div className='flex'>
-            <div className='text-gray-400 flex items-center mx-5 hover:cursor-pointer'>
-                <IoFootball className='mr-2'/>
-                <p>Scores</p>
+    <div className='border-solid border-[#222222] w-full justify-center
+        border-b-[1px] h-16 flex text-white text-bold text-2xl'
+    >
+        <div className='flex w-[1080px] justify-between'>
+            <div className="text-center flex items-center">
+                {/* <RxHamburgerMenu className='text-gray-50 mx-7'/> */}
+                <Link 
+                    to={'/'} 
+                    className='flex text-3xl gap-2 font-medium'
+                >
+                    Football <span className=' text-light-or'>Predictions</span>
+                </Link>
             </div>
-            <div className='text-gray-400 flex items-center mx-5 hover:cursor-pointer'>
-                <GoStar className='mr-2'/>
-                <p>Favourites</p>
-            </div>
-            <div className='text-gray-400 flex items-center mx-5 hover:cursor-pointer'>
-                <BsNewspaper className='mr-2'/>
-                <p>News</p>
+            <div className='flex gap-2'>
+                <Menu/>
             </div>
         </div>
     </div>
