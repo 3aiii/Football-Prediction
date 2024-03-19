@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Matchs from '../utils/Matchs.json'
-<<<<<<< HEAD
 import axios from 'axios'
 import Navbar from '../components/Navbar';
-import Region from '../components/Region';
-=======
-import Navbar from '../components/Navbar'
-import Team from '../components/Team'
->>>>>>> prem
+import Team from '../components/Team';
 
 const Main = () => {
   const [data, setData] = useState([]);
@@ -35,15 +30,9 @@ const Main = () => {
 
   return (
     <div className='flex flex-col justify-center items-center'>
-<<<<<<< HEAD
-      <Navbar />
-      <div className='w-[1080px]'>
-        <Region />
-=======
       <Navbar/>
-      <div className='w-[1280px]'>
+      <div className='w-[1080px]'>
         <Team/>
->>>>>>> prem
       </div>
        {/* <ul className='bg-black text-white'>
         {

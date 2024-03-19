@@ -14,11 +14,8 @@ export default {
       'light-gray' : '#9ca3af',
       'gray' : '#1f2937',
       'light-black' : '#151515',
-<<<<<<< HEAD
-=======
       's-black' : '#333333',
       'md-black' : '#181818',
->>>>>>> prem
       'light-or' : '#F8A145',
       'medium-or' : '#F07900',
       'hard-or' : '#D35100'

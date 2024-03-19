@@ -5,8 +5,12 @@ import { Link } from 'react-router-dom'
 
 const BoxMatch = () => {
   return (
-    <div className='my-4 p-3 border-solid border-[#222222] border-[1px] rounded-md flex-auto w-[70%] text-white'>
-        <div className='flex justify-between border-b-[1px] border-solid border-[#222222] pb-2 items-center text-[#707070]'>
+    <div className='my-4 p-3 border-solid border-[#222222] h-fit
+            border-[1px] rounded-md flex-auto w-[75%] text-white'
+    >
+        <div className='flex justify-between border-b-[1px] 
+            border-solid border-[#222222] pb-2 items-center text-[#707070]'
+        >
             <button
                 className='hover:text-light-or text-xl duration-150'
             >Favourites</button>
@@ -33,11 +37,11 @@ const BoxMatch = () => {
                             className='w-full h-[60px] object-contain'
                         />
                         <h4 className='my-[4px] text-lg'>Aston Villa</h4>
-                        <p className='bg-medium-or text-center font-medium text-white rounded-md'>29.34</p>
+                        <p className='bg-medium-or text-center font-light text-white text-xl rounded-md'>29.34</p>
                     </div>
                     <div className='flex flex-col justify-end w-1/3'>
                         <h4 className='my-[4px] text-lg'>Draw</h4>
-                        <p className='bg-medium-or text-center font-medium text-white rounded-md w-full'>44.34</p>
+                        <p className='bg-medium-or text-center font-light text-white text-xl rounded-md w-full'>44.34</p>
                     </div>
                     <div className='w-1/3'>
                         <img
@@ -46,7 +50,7 @@ const BoxMatch = () => {
                             className='w-full h-[60px] object-contain'
                             />
                         <h4 className='my-[4px] text-lg'>Liverpool</h4>
-                        <p className='bg-medium-or text-center font-medium text-white rounded-md'>32.54</p>
+                        <p className='bg-medium-or text-center font-light text-white text-xl rounded-md'>32.54</p>
                     </div>
                 </div>
             </Link>

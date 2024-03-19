@@ -5,6 +5,8 @@ import './index.css'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Favorite from './pages/Favorite.jsx'
 import Content from './pages/Content.jsx'
+import TableScore from './pages/TableScore.jsx'
+import MatchPred from './pages/MatchPred.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,11 +23,11 @@ const router = createBrowserRouter([
   },
   {
     path : '/TableScore',
-    element : <App/>
+    element : <TableScore/>
   },
   {
     path : '/Predictions',
-    element : <App/>
+    element : <MatchPred/>
   },
 ])
 
