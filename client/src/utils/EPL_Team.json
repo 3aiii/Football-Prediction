@@ -73,13 +73,13 @@
   },
   {
     "team_id": 13,
-    "team_name": "Manchester City",
+    "team_name": "Man City",
     "team_abbreviation": "MCI",
     "team_stadium": "Etihad Stadium"
   },
   {
     "team_id": 14,
-    "team_name": "Manchester United",
+    "team_name": "Man United",
     "team_abbreviation": "MUN",
     "team_stadium": "Old Trafford"
   },
@@ -91,7 +91,7 @@
   },
   {
     "team_id": 16,
-    "team_name": "Nottm Forest",
+    "team_name": "Nottingham",
     "team_abbreviation": "FOR",
     "team_stadium": "City Ground"
   },
@@ -103,7 +103,7 @@
   },
   {
     "team_id": 18,
-    "team_name": "Totenham",
+    "team_name": "Tottenham",
     "team_abbreviation": "TOT",
     "team_stadium": "Tottenham Hotspur Stadium"
   },
