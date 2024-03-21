@@ -42,6 +42,7 @@ const Menu = () => {
             className='flex items-center mx-5 hover:cursor-pointer
               hover:text-hard-or text-lg'
           >
+            wd
             <p className="mr-2">{menuItem.icon}</p>
             <p>{ menuItem.menu_name }</p>
           </Link>

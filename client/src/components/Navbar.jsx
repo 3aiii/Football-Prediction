@@ -1,7 +1,5 @@
 import React from 'react'
-import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from 'react-router-dom'
-import { PiSoccerBall  } from "react-icons/pi";
 import Menu from './Menu';
 
 function Navbar() {

@@ -120,7 +120,7 @@ const BoxMatch = () => {
                             alt='HomeTeam-img'
                             className='w-full h-[60px] object-contain'
                             />
-                        <h4 className='my-[4px] text-lg'>Crystal Palace</h4>
+                        <h4 className='my-[4px] text-lg'>Crystal Palace Teat</h4>
                         <p className='bg-medium-or text-center font-medium text-white rounded-md'>32.54</p>
                     </div>
                 </div>

@@ -7,7 +7,8 @@ const MatchPred = () => {
     <div className='flex flex-col justify-center items-center'>
         <Navbar />
         <div className='flex w-[1080px] gap-6'>
-            <Team />
+          <Team />
+          <p>dwdw</p>
         </div>
     </div>
   )

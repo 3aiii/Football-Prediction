@@ -8,6 +8,7 @@ const TableScore = () => {
         <Navbar />
         <div className='flex w-[1080px] gap-6'>
             <Team />
+            <p>dwdw</p>
         </div>
     </div>
     )

@@ -10,6 +10,7 @@ const Content = () => {
       <div className='flex w-[1080px] gap-6'>
         <Team />
         <BoxContent />
+        <p>dwd</p>
       </div>
     </div>
 
