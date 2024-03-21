@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from joblib import dump
 
-
 def pull_data():
     df = pd.read_csv('./Data/merged_football_data.csv')
     df["Date"] = pd.to_datetime(df["Date"], format="%d/%m/%Y")
