@@ -6,7 +6,7 @@ import Teams from "../utils/EPL_Team.json"
 
 function Team() {
   return (
-    <div className='text-light-gray my-4 mx-4 border-solid border-gray border-2 rounded-t-md w-1/4'>
+    <div className='text-light-gray my-4 mx-4 border-solid border-gray border-2 rounded-md w-1/4'>
         {/* Search Input */}
         <div className='flex items-center py-3 border-solid border-gray border-b-2'>
           <CiSearch className=' mx-3 text-xl'></CiSearch>

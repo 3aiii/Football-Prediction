@@ -2,13 +2,15 @@ import React from 'react'
 import Matchs from '../utils/Matchs.json'
 import Navbar from '../components/Navbar'
 import Team from '../components/Team'
+import Result from '../components/Result'
 
 const Main = () => {
   return (
     <div className='flex flex-col justify-center items-center'>
       <Navbar/>
-      <div className='w-[1280px]'>
+      <div className='w-[1080px] flex'>
         <Team/>
+        <Result/>
       </div>
        {/* <ul className='bg-black text-white'>
         {
