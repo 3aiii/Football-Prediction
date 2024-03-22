@@ -99,6 +99,5 @@ def form():
         "Prediction" :  Prediction.tolist(),
     })
 
-    # "Winner" :  winner.tolist(),
 if __name__ == "__main__":
     app.run(debug=True)

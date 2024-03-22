@@ -1,7 +1,9 @@
 import React from 'react'
 import { MdArrowForwardIos } from "react-icons/md";
+import { TbPlayFootball } from "react-icons/tb";
 import Card from './Card';
-
+import Matchs from '../utils/Matchs.json'
+import Cards from './Cards';
 
 function BoxMain() {
     return (
@@ -16,11 +18,9 @@ function BoxMain() {
             >Premier League</button>
             <MdArrowForwardIos className='text-3xl'/>
         </div>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+        <div className='flex flex-col'>
+            <Cards />
+        </div>
     </div>
     )
 }

@@ -1,23 +1,23 @@
 import React from 'react'
 import { IoIosStarOutline } from "react-icons/io";
 
-const Card = () => {
+const Card = ({ match }) => {
   return (
-    <div className='flex my-3 bg-md-black py-2 px-1 
+    <div className='flex mb-2 bg-md-black py-2 px-1 
         rounded-md text-white hover:bg-s-black justify-between'>
 
         {/* Date */}
         <div className='px-3 flex flex-col justify-center font-extralight items-center'>
-            <p>17 Mar</p>
-            <p>Posts.</p>
+            <p>{match.DateUtc}</p>
+            {/* <p>Posts.</p> */}
         </div>
 
         {/* Teams */}
         <div className='w-2/4'>
             <div className='flex items-center justify-between'>
                 <div className='flex items-center '>
-                    <img src="/src/assets/team_logo/Brighton.png" alt="" className='w-[30px] h-[30px] mr-2'/>
-                    <p>Brighton</p>
+                    <img src={`/src/assets/team_logo/${match.HomeTeam}.png`} alt="" className='w-[30px] h-[30px] mr-2'/>
+                    <p>{ match.HomeTeam }</p>
                 </div>
                 <div>
                     <p>22.9</p>
@@ -25,8 +25,8 @@ const Card = () => {
             </div>
             <div className='flex items-center justify-between'>
                 <div className='flex items-center '>
-                    <img src="/src/assets/team_logo/Man City.png" alt="" className='w-[30px] h-[30px] mr-2'/>
-                    <p>Manchester City</p>
+                    <img src={`/src/assets/team_logo/${match.AwayTeam}.png`} alt="" className='w-[30px] h-[30px] mr-2'/>
+                    <p>{ match.AwayTeam }</p>
                 </div>
                 <div>
                     <p>99.9</p>

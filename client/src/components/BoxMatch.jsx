@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const BoxMatch = () => {
   return (
     <div className='my-4 p-3 border-solid border-[#222222] h-fit
-            border-[1px] rounded-md flex-auto w-[75%] text-white'
+        border-[1px] rounded-md flex-auto w-[75%] text-white'
     >
         <div className='flex justify-between border-b-[1px] 
             border-solid border-[#222222] pb-2 items-center text-[#707070]'
