@@ -13,7 +13,6 @@ function BoxMain() {
             <button
                 className='hover:text-light-or text-xl duration-150'
             >Premier League</button>
-            <MdArrowForwardIos className='text-3xl'/>
         </div>
         <div className='flex flex-col'>
             <Cards />

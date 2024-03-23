@@ -77,6 +77,17 @@ const Cards = () => {
             />
         </>
     )
+                        </div>
+                    </div>
+                ))
+            }
+            <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={onPageChange}
+            />
+        </>
+    )
 }
 
 export default Cards
