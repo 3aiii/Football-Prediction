@@ -5,7 +5,7 @@ import Teams from "../utils/EPL_Team.json"
 
 function Team() {
   return (
-    <div className='my-4 border-solid border-[#222222] 
+    <div className='my-4 border-solid border-[#222222] h-fit pb-3
       border-[1px] rounded-md flex-auto w-[25%] text-white'
     >
       <div className='flex items-center py-3 border-solid border-gray border-b-[1px]'>
