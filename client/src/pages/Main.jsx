@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Matchs from '../utils/Matchs.json'
 import Navbar from '../components/Navbar'
 import Team from '../components/Team'
 import axios from 'axios'

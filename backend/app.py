@@ -1,12 +1,21 @@
 from flask import Flask,jsonify,request
 from flask_cors import CORS
 from keras.models import load_model
-from keras.initializers import Orthogonal
 from joblib import load
 import numpy as np
 import pandas as pd
+from pymongo import MongoClient
+from bson.objectid import ObjectId
+import re
+
 
 app = Flask(__name__)
+
+client = MongoClient('mongodb+srv://sirapatmai:30012546@nodeexpressproject.v5zjcgm.mongodb.net/')
+# client = MongoClient('mongodb://localhost:27017/')
+db = client['football']
+collection = db['matchs']
+
 cors = CORS(app, origins='*', supports_credentials=True)
 model = load_model('football_predict.h5')
 
@@ -88,6 +97,45 @@ def predict_match_result(Day_Of_Week,HomeTeam, AwayTeam):
     return y_train_pred*100
 
 # API ROUTES
+@app.route('/',methods = ['GET'])
+def data_football():
+    page = int(request.args.get('page',1))
+    per_page = 2
+    skip = (page - 1) * per_page
+    data = list(collection.find({}).skip(skip).limit(per_page))
+
+    for item in data:
+        item['_id'] = str(item['_id'])
+
+        ## --- loop for update predictions field ---
+        # for match in item['Matchs']:
+        #     try:
+        #         prediction = predict_match_result(0, match['HomeTeam'], match['AwayTeam']).tolist() if match['HomeTeam'] and match['AwayTeam'] else 0
+        #         collection.update_one(
+        #             {'_id': ObjectId(item['_id']), 'Matchs.HomeTeam': match['HomeTeam'], 'Matchs.AwayTeam': match['AwayTeam']},
+        #             {'$set': {'Matchs.$.predictions': prediction}}
+        #         )
+        #     except KeyError:
+        #         pass
+    return jsonify(data)
+
+@app.route('/api/getTeam',methods=['GET'])
+def get_Team():
+    collection = db["teams"]
+    team_name = request.args.get('team')
+    
+    if team_name:
+        team_name_pattern = re.compile(f".*{re.escape(team_name)}.*", re.IGNORECASE)
+        teams = collection.find({"team_name": {"$regex": team_name_pattern}})
+    else:
+        teams = list(collection.find({}))
+
+    teams = list(teams)
+    for team in teams:
+        team['_id'] = str(team['_id'])
+    
+    return jsonify(teams)
+
 @app.route('/api/form',methods=['POST'])
 def form():
     Day = int(request.json['Day'])
@@ -98,6 +146,7 @@ def form():
     return jsonify({
         "Prediction" :  Prediction.tolist(),
     })
+
 
 if __name__ == "__main__":
     app.run(debug=True)

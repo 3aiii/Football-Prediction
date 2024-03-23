@@ -1,8 +1,5 @@
 import React from 'react'
 import { MdArrowForwardIos } from "react-icons/md";
-import { TbPlayFootball } from "react-icons/tb";
-import Card from './Card';
-import Matchs from '../utils/Matchs.json'
 import Cards from './Cards';
 
 function BoxMain() {
