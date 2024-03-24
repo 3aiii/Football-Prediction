@@ -22,7 +22,7 @@ const router = createBrowserRouter([
     element : <Content />
   },
   {
-    path : '/TableScore',
+    path : '/TeamDetail',
     element : <TableScore/>
   },
   {

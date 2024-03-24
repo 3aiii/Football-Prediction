@@ -1,4 +1,4 @@
-from flask import Flask,jsonify,request
+from flask import Flask,jsonify,request,json
 from flask_cors import CORS
 from keras.models import load_model
 from joblib import load
@@ -7,7 +7,6 @@ import pandas as pd
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import re
-
 
 app = Flask(__name__)
 
@@ -147,6 +146,41 @@ def form():
         "Prediction" :  Prediction.tolist(),
     })
 
+@app.route('/api/latest-date', methods=['GET'])
+def get_latest_teams():
+    team_name = request.args.get('team_name')
+    df = pd.read_csv('./Data/merged_football_data.csv')
+    df["Date"] = pd.to_datetime(df["Date"], format="%d/%m/%Y")
+
+    latest_games = df[(df['HomeTeam'] == team_name) | (df['AwayTeam'] == team_name)].tail(5)
+    teams = latest_games.to_dict(orient='records')
+    
+    return jsonify({'Details': teams})
+
+# @app.route('/favorites', methods=['GET', 'POST'])
+# def manage_favorites():
+#     collection = db["matchs"]
+#     if request.method == 'GET':
+#         favorites = request.args.get('arrayData')
+#         favorites = json.load(favorites)
+
+#         # matches = collection.find({})
+#         # favorite_matches = []
+
+#         # for match in matches:
+#         #     for single_match in match['matches']:
+#         #         if single_match['MatchNumber'] in favorites:
+#         #             favorite_matches.append(single_match)
+
+#         return jsonify(favorites)
+    
+#     elif request.method == 'POST':
+#         data = request.get_json()
+#         favorites = request.args.get('favorites', '[]')
+#         favorites = json.loads(favorites)
+#         favorites.append(data)
+#         favorites = json.dumps(favorites)
+#         return jsonify({'message': 'Favorite added successfully'}), 201
 
 if __name__ == "__main__":
     app.run(debug=True)

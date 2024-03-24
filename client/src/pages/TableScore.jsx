@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Team from '../components/Team'
+import BoxTeam from '../components/BoxTeam'
 
 const TableScore = () => {
   return (
@@ -8,6 +9,7 @@ const TableScore = () => {
         <Navbar />
         <div className='flex w-[1080px] gap-6'>
             <Team />
+            <BoxTeam />
         </div>
     </div>
     )

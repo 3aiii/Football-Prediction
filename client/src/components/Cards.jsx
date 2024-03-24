@@ -2,15 +2,20 @@ import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import { TbPlayFootball } from "react-icons/tb";
 import { v4 as uuidv4 } from 'uuid';
-import { MdArrowForwardIos } from "react-icons/md";
 import Pagination from './Pagination';
 import axios from 'axios'
 
 const Cards = () => {
-    const [accordionOpen ,setAccordionOpen] = useState(false)
     const [currentPage, setCurrentPage] = useState(1);
     const [Matchs, setMatchs] = useState([]);
     const totalPages = 19; 
+    const [favorites, setFavorites] = useState([]);
+    
+    const handleAddFavorite = async (id) => {
+        const updatedFavorites = [...favorites, id];
+        setFavorites(updatedFavorites); 
+        localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    }    
 
     useEffect(()=>{
         const fetch_data = async () =>{
@@ -62,6 +67,7 @@ const Cards = () => {
                                 match?.Matchs?.map((m)=>(
                                     <Card
                                         match = { m }
+                                        handleAddFavorite = { handleAddFavorite }
                                         key={ uuidv4() }
                                     />
                                 ))

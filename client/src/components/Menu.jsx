@@ -20,9 +20,9 @@ const menuArray = [
   },
   {
     id: 3,
-    menu_name: "Table Score",
+    menu_name: "Team Detail",
     icon: <FaTable />,
-    link : "/TableScore"
+    link : "/TeamDetail"
   },
   {
     id: 4,
