@@ -3,7 +3,7 @@ import numpy as np
 from joblib import dump
 
 def pull_data():
-    df = pd.read_csv('./Data/merged_football_data.csv')
+    df = pd.read_csv('./Data/final_football_dataset.csv')
     df["Date"] = pd.to_datetime(df["Date"], format="%d/%m/%Y")
     df["H_Team"] = df["HomeTeam"]
     df["A_Team"] = df["AwayTeam"]
@@ -14,5 +14,5 @@ def pull_data():
     df.loc[df["FTR"] == "D","target"] = 2
 
     return df
-
-dump(pull_data, 'pull_data.joblib')
+df = pull_data()
+# dump(pull_data, 'pull_data.joblib')

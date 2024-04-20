@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Menu from './Menu';
 
 function Navbar() {
+    
   return (
     <div className='border-solid border-[#222222] w-full justify-center
         border-b-[1px] h-16 flex text-white text-bold text-2xl'

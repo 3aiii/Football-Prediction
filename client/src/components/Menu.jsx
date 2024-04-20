@@ -24,12 +24,6 @@ const menuArray = [
     icon: <FaTable />,
     link : "/TeamDetail"
   },
-  {
-    id: 4,
-    menu_name: "Favorites",
-    icon: <GoStar />,
-    link : "/favourites"
-  },
 ];
 
 const Menu = () => {

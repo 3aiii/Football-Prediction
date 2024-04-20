@@ -16,16 +16,16 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   }
 
   return (
-    <nav className="flex justify-center">
+    <nav className="flex justify-center mt-2">
       <ul className="inline-flex  rounded-[0.25rem]">
         {
           startPage > 1 && (
             <li className="inline-flex mr-[0.5rem] duration-100">
-              <a className="py-[0.5rem] px-[0.75rem]" onClick={() => onPageChange(1)}>
+              <a className="py-[0.5rem] px-[0.75rem] hover:bg-s-black cursor-pointer rounded-full" onClick={() => onPageChange(1)}>
                 1
               </a>
             </li>
-          )
+          ) 
         }
         {
           startPage > 2 && (
@@ -39,10 +39,10 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             <li
               key={number}
               className={`inline-flex mr-[0.5rem] duration-100 ${
-                currentPage === number ? 'bg-light-black' : ''
+                currentPage === number ? 'bg-medium-or text-black rounded-full' : ''
               }`}
             >
-              <a className="py-[0.5rem] px-[0.75rem]" onClick={() => onPageChange(number)}>
+              <a className={`py-[0.5rem] px-[0.75rem] cursor-pointer rounded-full ${currentPage === number ? 'hover:bg-medium-or' : 'hover:bg-s-black'}`} onClick={() => onPageChange(number)}>
                 {number}
               </a>
             </li>
@@ -58,7 +58,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         {
           endPage < totalPages && (
             <li className="inline-flex mr-[0.5rem] duration-100">
-              <a className="py-[0.5rem] px-[0.75rem]" onClick={() => onPageChange(totalPages)}>
+              <a className="py-[0.5rem] px-[0.75rem] hover:bg-s-black cursor-pointer rounded-full " onClick={() => onPageChange(totalPages)}>
                 {totalPages}
               </a>
             </li>

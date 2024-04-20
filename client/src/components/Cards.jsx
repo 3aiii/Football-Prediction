@@ -9,14 +9,7 @@ const Cards = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [Matchs, setMatchs] = useState([]);
     const totalPages = 19; 
-    const [favorites, setFavorites] = useState([]);
     
-    const handleAddFavorite = async (id) => {
-        const updatedFavorites = [...favorites, id];
-        setFavorites(updatedFavorites); 
-        localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-    }    
-
     useEffect(()=>{
         const fetch_data = async () =>{
             const data = await axios.get(`http://127.0.0.1:5000/?page=${currentPage}`)
@@ -67,7 +60,6 @@ const Cards = () => {
                                 match?.Matchs?.map((m)=>(
                                     <Card
                                         match = { m }
-                                        handleAddFavorite = { handleAddFavorite }
                                         key={ uuidv4() }
                                     />
                                 ))
@@ -76,6 +68,7 @@ const Cards = () => {
                     </div>
                 ))
             }
+
             <Pagination
                 currentPage={currentPage}
                 totalPages={totalPages}

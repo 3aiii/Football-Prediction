@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import { MdArrowForwardIos } from "react-icons/md";
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function Team() {
   const [Teams,setTeams] = useState([])
   const [searchTeam,setSearchTeam] = useState('')
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   useEffect(()=>{
     const fetch_data = async () =>{
@@ -35,18 +40,18 @@ function Team() {
         <p>TEAMS</p>
       </div>
 
-      <div>
+      <div onClick={handleScrollToTop}>
         { 
           Teams.length !== 0 
             ? (
                 Teams.map((data) =>
-                    <div key={data.team_id} className='flex items-center mx-5 my-2 
+                    <Link to={`/TeamDetail/${data.team_name}`} key={data.team_id} className='flex items-center mx-5 my-2 
                       bg-md-black py-2 px-1 rounded-md 
-                      text-white hover:bg-s-black cursor-pointer'
+                      text-white hover:bg-s-black cursor-pointer'                
                     >
                       <img src={`/src/assets/team_logo/${data.team_name}.png`} alt="" className='w-[40px] h-[40px] mr-2'/>
                       <p>{data.team_name}</p>
-                    </div>
+                    </Link>
                   )
               ) : (
                 <div className='flex items-center justify-center mx-5 my-2 py-2 px-1 rounded-md 

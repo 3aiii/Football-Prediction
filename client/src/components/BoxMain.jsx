@@ -1,5 +1,4 @@
 import React from 'react'
-import { MdArrowForwardIos } from "react-icons/md";
 import Cards from './Cards';
 
 function BoxMain() {

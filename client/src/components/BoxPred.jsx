@@ -8,13 +8,15 @@ const BoxPred = () => {
     const [pred,setPred] = useState([])
     const [homeTeam,setHomeTeam] = useState('')
     const [awayTeam,setAwayTeam] = useState('')
-    const [day,setDay] = useState(0)
+    const [numOfLastMatch,setNumOfLastMatch] = useState(0)
+    const [selectDataFromSameTeam,setSelectDataFromSameTeam] = useState(false)
 
     const Predictions = async () =>{
         const data = await axios.post(`http://127.0.0.1:5000/api/form`, {
                 HomeTeam : homeTeam,
                 AwayTeam : awayTeam,
-                Day : day
+                numOfLastMatch : numOfLastMatch,
+                selectDataFromSameTeam : selectDataFromSameTeam
             })
             setPred(data.data.Prediction[0])
     }
@@ -24,8 +26,10 @@ const BoxPred = () => {
             setHomeTeam(event.target.value)
         } else if (Input == 'AwayTeam'){
             setAwayTeam(event.target.value)
-        } else if (Input == 'Day'){
-            setDay(event.target.value)
+        } else if (Input == 'Num'){
+            setNumOfLastMatch(event.target.value)
+        } else if (Input == 'Check'){
+            setSelectDataFromSameTeam(!selectDataFromSameTeam)
         } 
     }
 
@@ -69,7 +73,7 @@ const BoxPred = () => {
                         Teams.map((team)=>(
                             <option 
                             key={ team.team_id }
-                            value={team.team_name}
+                            value={ team.team_name }
                             className=''>   
                                 { team.team_name }
                             </option>
@@ -115,18 +119,23 @@ const BoxPred = () => {
         </div>
         <div className='flex mt-4 gap-4'>
             {/* <label className='  '>Day</label> */}
-            <select 
-                onChange={(e) => handleChange(e,'Day')}
+            <input
+                type='number'
                 className='w-full rounded-md text-black border border-gray-300 
-                px-3 py-2 focus:outline-none focus:border-blue-500 bg-white shadow-md'>
-                <option value={0}>Monday</option>
-                    <option value={1}>Tuesday</option>
-                    <option value={2}>Wednesday</option>
-                    <option value={3}>Thursday</option>
-                    <option value={4}>Friday</option>
-                    <option value={5}>Saturday</option>
-                    <option value={6}>Sunday</option>
-            </select>
+                px-3 py-2 focus:outline-none focus:border-blue-500'
+                min={0}
+                max={181}
+                onChange={(e) => handleChange(e,"Num")}
+            />
+            <div className='flex'>
+                <input
+                    type='checkbox'
+                    className='w-[220px]'
+                    onChange={(e) => handleChange(e,"Check")}
+                    
+                />
+                <label className='text-sm'>Data that is the same as the entered values ?</label>
+            </div>
         </div>
         <button 
             onClick={Predictions}
