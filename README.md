@@ -41,10 +41,8 @@ A web application that predicts the outcome of Premier League football matches u
 football-prediction/
 ├── backend/
 │   ├── app.py
-│   ├── model/
-│   │   └── lstm_model.py
-│   └── utils/
-│       └── preprocess.py
+│   ├── model/ 
+│       └── lstm_model.py (not include in project becase i'm use gitignore in that file)
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
